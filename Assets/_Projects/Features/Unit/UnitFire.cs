@@ -8,6 +8,8 @@ using R3;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+using EUpdatePhase = _Projects.Features.Game.EUpdatePhase;
+using UpdateScheduler = _Projects.Features.Game.UpdateScheduler;
 
 namespace _Projects.Features.Unit
 {
@@ -43,7 +45,7 @@ namespace _Projects.Features.Unit
 
         private float _fireTime;
         [Inject] private IObjectResolver _resolver;
-        [Inject] private IUpdateObservable _updateObservable;
+        [Inject] private UpdateScheduler _updateObservable;
         private readonly List<BulletController> _bulletInstances = new();
 
         public void OnRegister(IContainerBuilder builder)

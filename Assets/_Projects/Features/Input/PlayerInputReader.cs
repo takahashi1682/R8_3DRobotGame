@@ -1,4 +1,3 @@
-using _Projects.Features.Game;
 using _Projects.Features.Unit;
 using MyUtils;
 using MyUtils.VContainerExtensions;
@@ -7,6 +6,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using VContainer;
 using VContainer.Unity;
+using EUpdatePhase = _Projects.Features.Game.EUpdatePhase;
+using UpdateScheduler = _Projects.Features.Game.UpdateScheduler;
 
 namespace _Projects.Features.Input
 {
@@ -25,7 +26,7 @@ namespace _Projects.Features.Input
         private InputSystem_Actions _actions;
         public InputSystem_Actions.PlayerActions Player { get; private set; }
 
-        [Inject] private IUpdateObservable _updateObservable;
+        [Inject] private UpdateScheduler _updateObservable;
 
         public void OnRegister(IContainerBuilder builder)
         {
@@ -44,7 +45,7 @@ namespace _Projects.Features.Input
                 .Subscribe(_ => OnPhaseUpdate())
                 .AddTo(this);
         }
-        
+
         private void OnEnable() => _actions.Enable();
         private void OnDisable() => _actions.Disable();
 

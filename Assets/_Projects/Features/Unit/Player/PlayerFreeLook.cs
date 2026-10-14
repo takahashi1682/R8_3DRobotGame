@@ -1,11 +1,12 @@
 using System.Threading;
-using _Projects.Features.Game;
 using Cysharp.Threading.Tasks;
 using MyUtils.VContainerExtensions;
 using R3;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+using EUpdatePhase = _Projects.Features.Game.EUpdatePhase;
+using UpdateScheduler = _Projects.Features.Game.UpdateScheduler;
 
 namespace _Projects.Features.Unit.Player
 {
@@ -44,7 +45,7 @@ namespace _Projects.Features.Unit.Player
 
         [Inject] private IUnitControllable _control;
         [Inject] private Rigidbody _rigidbody;
-        [Inject] private IUpdateObservable _updateObservable;
+        [Inject] private UpdateScheduler _updateObservable;
 
         public void OnRegister(IContainerBuilder builder)
         {

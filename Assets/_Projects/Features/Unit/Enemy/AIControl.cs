@@ -1,13 +1,14 @@
 using System;
 using System.Threading;
-using _Projects.Features.Game;
 using Cysharp.Threading.Tasks;
 using MyUtils.VContainerExtensions;
 using R3;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+using EUpdatePhase = _Projects.Features.Game.EUpdatePhase;
 using Random = UnityEngine.Random;
+using UpdateScheduler = _Projects.Features.Game.UpdateScheduler;
 
 namespace _Projects.Features.Unit.Enemy
 {
@@ -28,7 +29,7 @@ namespace _Projects.Features.Unit.Enemy
         [Inject] private IUnitTrackingHandler _trackingHandler;
         [Inject] private UnitStatus _unitStatus;
         [Inject] private UnitSetting _unitSetting;
-        [Inject] private IUpdateObservable _updateObservable;
+        [Inject] private UpdateScheduler _updateObservable;
         private float _lastThinkTime;
 
         public void OnRegister(IContainerBuilder builder)
