@@ -975,6 +975,7 @@ GameObject:
   - component: {fileID: 939060855616413983}
   - component: {fileID: 939060855616413990}
   - component: {fileID: 939060855616413995}
+  - component: {fileID: 939060855616413997}
   - component: {fileID: 939060855616413994}
   - component: {fileID: 574404284475791463}
   m_Layer: 6
@@ -18110,7 +18111,6 @@ GameObject:
   - component: {fileID: 246109408298996260}
   - component: {fileID: 589555445567513473}
   - component: {fileID: 988715536612551758}
-  - component: {fileID: 988715536612551759}
   - component: {fileID: 988715536612551760}
   - component: {fileID: 988715536612551762}
   - component: {fileID: 988715536612551761}
@@ -18641,6 +18641,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &939060855616413997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155872612}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2319cee27f43704cad39ae07fdf72c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Projects.Input.T16000InputReader
+  _move:
+    value: {x: 0, y: 0}
+  _look:
+    value: {x: 0, y: 0}
+  _fire:
+    value: 0
+  _fly:
+    value: 0
+  _boost:
+    value: 0
+  _lockOn:
+    value: 0
+  _moveBinding: <HID::Thrustmaster T.16000M>{leftHand}/stick
+  _boostBinding: <HID::Thrustmaster T.16000M>{leftHand}/trigger
+  _flyBinding: <HID::Thrustmaster T.16000M>{leftHand}/button2
+  _lookBinding: <HID::Thrustmaster T.16000M>{rightHand}/stick
+  _fireBinding: <HID::Thrustmaster T.16000M>{rightHand}/trigger
+  _lockOnBinding: <HID::Thrustmaster T.16000M>{rightHand}/button2
 --- !u!4 &988715536612551756
 Transform:
   m_ObjectHideFlags: 0
@@ -18690,18 +18720,6 @@ MonoBehaviour:
   - {fileID: 1872573817}
   - {fileID: 776362482}
   _index: 0
---- !u!114 &988715536612551759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 224505097031307202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 109dc292648427c4f992450a22eb7a5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::_Projects.Features.Game.UpdateFeature
 --- !u!114 &988715536612551760
 MonoBehaviour:
   m_ObjectHideFlags: 0
