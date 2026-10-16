@@ -33,11 +33,6 @@ namespace _Projects.Unit
             builder.RegisterComponent(this).As<ILockOnActionHandler, ILockOnActionObservable>();
         }
 
-        protected virtual void Awake()
-        {
-            IsAction.AddTo(this);
-        }
-
         protected virtual void Start()
         {
             // Targetがnullになったらロックオンを解除する

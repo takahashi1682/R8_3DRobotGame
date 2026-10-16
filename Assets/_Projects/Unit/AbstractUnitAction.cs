@@ -12,5 +12,10 @@ namespace _Projects.Unit
     {
         [SerializeField, ReadOnly] protected SerializableReactiveProperty<bool> _isAction = new();
         public ReadOnlyReactiveProperty<bool> IsAction => _isAction;
+
+        protected virtual void Awake()
+        {
+            _isAction.AddTo(this);
+        }
     }
 }

@@ -50,11 +50,10 @@ namespace _Projects.Unit
             builder.RegisterComponent(this).As<IFireActionHandler, IFireActionObservable>();
         }
 
-        protected virtual void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             SetEffectsActive(false);
-
-            IsAction.AddTo(this);
         }
 
         protected virtual void Start()

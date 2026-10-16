@@ -1,7 +1,6 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using MyUtils.VContainerExtensions;
-using R3;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -32,12 +31,7 @@ namespace _Projects.Unit
         {
             builder.RegisterComponent(this).As<IFlyActionHandler, IFlyActionObservable>();
         }
-
-        private void Awake()
-        {
-            IsAction.AddTo(this);
-        }
-
+        
         public UniTask OnValueChanged(bool value, CancellationToken ct)
         {
             _isAction.Value = value;

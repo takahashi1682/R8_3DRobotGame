@@ -43,10 +43,9 @@ namespace _Projects.Unit
             builder.RegisterComponent(this).As<IMoveActionHandler, IMoveActionObservable>();
         }
 
-        private void Awake()
+        protected override void Awake()
         {
-            IsAction.AddTo(this);
-
+            base.Awake();
             _currentPower = MovePower;
         }
 

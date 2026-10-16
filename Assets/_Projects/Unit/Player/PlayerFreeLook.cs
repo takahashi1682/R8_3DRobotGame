@@ -50,11 +50,6 @@ namespace _Projects.Unit.Player
             builder.RegisterComponent(this).As<ILookActionHandler, ILookActionObservable>();
         }
 
-        private void Awake()
-        {
-            IsAction.AddTo(this);
-        }
-
         private void Start()
         {
             _updateObservable.OnUpdate(EUpdatePhase.CameraPrepare)
